@@ -21,6 +21,7 @@ var auditTask = function(taskEl) {
   }
   //this should oprint out an object for the value of the date var, but at 5pm of that date
   //console.log(time);
+  console.log(taskEl);
 
 };
 
@@ -284,5 +285,8 @@ $("#remove-tasks").on("click", function() {
 // load tasks for the first time
 loadTasks();
 
-
-
+setInterval(function() {
+  $(".card .list-group-item").each(function(el){
+  auditTask(el);
+    });
+}, (1000 * 60) * 30);
